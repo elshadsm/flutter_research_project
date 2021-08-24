@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_research_project/pages/my-home/SignatureDialog.dart';
 import 'MyHomePage.dart';
 
 class MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,21 +13,24 @@ class MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(
+                primary: Colors.blue,
+                side: BorderSide(width: 2, color: Colors.grey),
+              ),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return SignatureDialog();
+                  },
+                );
+              },
+              child: Text('Open Signature Panel'),
             ),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
