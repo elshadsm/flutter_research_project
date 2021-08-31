@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_research_project/pages/my-home/SignatureDialog.dart';
-import 'MyHomePage.dart';
 
-class MyHomePageState extends State<MyHomePage> {
+import 'signature_dialog.dart';
+
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('My Home Page'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
+          children: [
             OutlinedButton(
               style: OutlinedButton.styleFrom(
                 primary: Colors.blue,
@@ -21,9 +21,7 @@ class MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 showDialog(
                   context: context,
-                  builder: (BuildContext context) {
-                    return SignatureDialog();
-                  },
+                  builder: (BuildContext context) => SignatureDialog(),
                 );
               },
               child: Text('Open Signature Panel'),
