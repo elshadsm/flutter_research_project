@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_research_project/pages/my_home/signature_dialog_header.dart';
+import './signature_dialog_header.dart';
+
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 
-
 class SignatureDialog extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Dialog(
